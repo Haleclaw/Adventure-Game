@@ -1,0 +1,33 @@
+body{
+	background-image: url("img/background.jpg");
+	background-size: cover !important;
+	background-repeat: no-repeat;
+}
+#game-container{
+	background-image: url("img/zwaard.jpg");
+	background-size: cover !important;
+	text-align: center;
+	width: 1000px;
+	height: 700px;
+	margin: 0 auto;
+	font-family: 'MedievalSharp', cursive;
+	border: black solid 5px;
+	background-color: white;
+	color: #54492d;
+}
+#title{
+	margin-top: 0px;
+	color: #54492d;
+	background-color:black;
+}
+#description{
+	margin-top: 5px;
+    color: white;
+}
+#game-buttons{
+	position: absolute;
+	bottom:  200px;
+	margin-left: 350px;
+
+
+}
