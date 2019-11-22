@@ -39,9 +39,20 @@ body{
 }
 #button1, #button2, #button3{
   background-color: rgba(17, 17, 17, 0.646);
+  font-family: 'MedievalSharp', cursive;
   color: white;
   padding: 5px;
   margin-right: 50px;
   font-size: 20px;
-  border: none;
+  border: solid black 3px;
+}
+#button1:hover, #button2:hover, #button3:hover{
+  background-color: rgba(17, 17, 17, 0.646);
+  font-family: 'MedievalSharp', cursive;
+  color: #61534e;
+  padding: 5px;
+  margin-right: 50px;
+  font-size: 20px;
+  border: solid black 3px;
+
 }
