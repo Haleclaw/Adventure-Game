@@ -14,5 +14,15 @@ button3.onclick = Credits;
 
 function play(){
   document.getElementById("button1").innerHTML = "Het werkt"
+  document.getElementById("button2").innerHTML = "Het werkt"
+  document.getElementById("button3").innerHTML ='Het werkt'
+  document.getElementById("description").innerHTML = "je bent momenteel in de stad Evemor"
 }
 
+function help(){
+
+}
+
+function credits(){
+
+}
