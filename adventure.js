@@ -12,14 +12,20 @@ button1.onclick = play;
 button2.onclick = help;
 button3.onclick = Credits;
 
+// introductie level // blood and wine // introductie level
+
 function play(){
   document.getElementById("button1").innerHTML = "Het werkt"
   document.getElementById("button2").innerHTML = "Het werkt"
   document.getElementById("button3").innerHTML ='Het werkt'
-  document.getElementById("description").innerHTML = "je bent momenteel in de stad Evemor"
+  document.getElementById("description").innerHTML = "je word wakker in de kerkers van Evemor"
+  document.getElementbyid('game-container').style.backgroundImage = " url('dungeon.jpg') ";
+
+  
 }
 
 function help(){
+
 
 }
 
