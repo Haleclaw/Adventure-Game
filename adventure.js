@@ -19,8 +19,9 @@ function play(){
   document.getElementById("button2").innerHTML = "Het werkt"
   document.getElementById("button3").innerHTML ='Het werkt'
   document.getElementById("description").innerHTML = "je word wakker in de kerkers van Evemor"
-  document.getElementbyid('game-container').style.backgroundImage = " url('dungeon.jpg') ";
-
+  
+  var achtergrond = document.getElementById('game-container')
+  achtergrond.style.backgroundImage = " url('img/dungeon.jpg') ";
   
 }
 
