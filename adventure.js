@@ -1,5 +1,10 @@
 
 // Made by Bram van ballegooijen // blood and wine // Made by Bram van ballegooijen //
+// all vars // blood and wine // all vars //
+
+var getzwaard = 'ja'
+
+
 // inventory // blood and wine // inventory //
 
 
@@ -25,14 +30,15 @@ document.getElementById("description").innerHTML = "Welkom bij Blood and wine. D
 button1.onclick = play;
 button2.onclick = help;
 button3.onclick = Credits;
+
 }
 
 // introductie level // blood and wine // introductie level //
 
 function play(){
-  document.getElementById("button1").innerHTML = "je pakt de trap"
+  document.getElementById("button1").innerHTML = "je kijkt rond in kisten"
   document.getElementById("button2").innerHTML = "je gaat door de deur"
-  document.getElementById("button3").innerHTML ='je doorzoekt de dungeon'
+  document.getElementById("button3").innerHTML ='je doorzoekt de dungeon '
   document.getElementById("description").innerHTML = "je word wakker in de kerkers van Evemor"
   
   var achtergrond = document.getElementById('game-container')
@@ -41,9 +47,11 @@ function play(){
   document.getElementById('inventoryItem').src ='img/coin.png'
   document.getElementById('inventoryItem').style.display = "block"
   
-  document.getElementById("button1").setAttribute('onclick',"keuze()")
+  document.getElementById("button1").setAttribute('onclick',"kisten()")
   document.getElementById("button2").setAttribute('onclick',"keuze()")
   document.getElementById("button3").setAttribute('onclick',"goblin()")
+
+
   
 
 }
@@ -80,7 +88,7 @@ function Credits(){
 
 function goblin(){
 
-  document.getElementById("description").innerHTML = "een goblin genaamt <b>ARCO DE GENIEPIGE</b> komt uit het niets en steelt al je geld! HIIIHAAAA...."
+  document.getElementById("description").innerHTML = "een goblin genaamt <b>ARCO DE GENIEPIGE</b> komt achter de boekenkasten vandaan  en steelt al je geld! HIIIHAAAA.... <br>"
   
   document.getElementById("button1").innerHTML = "ren weg van de Goblin"
   document.getElementById("button2").innerHTML = "Val de goblin aan"
@@ -94,6 +102,45 @@ function goblin(){
   document.getElementById("button3").setAttribute('onclick',"keuze()")
 
   var achtergrond = document.getElementById('game-container')
-  achtergrond.style.backgroundImage = " url('img/dungeonGoblin.png') ";
+  achtergrond.style.backgroundImage = " url('img/dungeonGoblin.jpg') ";
 
 }
+function kisten(){
+if ( getzwaard == 'ja'){
+	document.getElementById("description").innerHTML = "je hebt een oud zwaard gevonden in een van de kisten"
+    var zwaard = document.createElement('img');
+    inventory.appendChild(zwaard);
+    zwaard.setAttribute('id','zwaard')
+    zwaard.src = "img/zwaard.png"
+    getzwaard = 'nee'
+    }
+      else{
+      	document.getElementById("description").innerHTML = "er zit verder niks meer in de kisten"
+      }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
