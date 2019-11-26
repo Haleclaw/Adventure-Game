@@ -43,7 +43,7 @@ function play(){
   
   document.getElementById("button1").setAttribute('onclick',"keuze()")
   document.getElementById("button2").setAttribute('onclick',"keuze()")
-  document.getElementById("button3").setAttribute('onclick',"keuze()")
+  document.getElementById("button3").setAttribute('onclick',"goblin()")
   
 
 }
@@ -72,5 +72,28 @@ function Credits(){
   document.getElementById("button1").setAttribute('onclick',"menu()")
   document.getElementById("button2").setAttribute('onclick',"menu()")
   document.getElementById("button3").setAttribute('onclick',"menu()")
+
+}
+
+// level 1 // Keuze goblin // level 1 //
+// level 1 // keuze goblin // level 1 //
+
+function goblin(){
+
+  document.getElementById("description").innerHTML = "een goblin genaamt <b>ARCO DE GENIEPIGE</b> komt uit het niets en steelt al je geld! HIIIHAAAA...."
+  
+  document.getElementById("button1").innerHTML = "ren weg van de Goblin"
+  document.getElementById("button2").innerHTML = "Val de goblin aan"
+  document.getElementById('button3').style.display =' none'
+  document.getElementById('inventoryItem').style.display = 'none'
+
+  
+
+  document.getElementById("button1").setAttribute('onclick',"keuze()")
+  document.getElementById("button2").setAttribute('onclick',"keuze()")
+  document.getElementById("button3").setAttribute('onclick',"keuze()")
+
+  var achtergrond = document.getElementById('game-container')
+  achtergrond.style.backgroundImage = " url('img/dungeonGoblin.png') ";
 
 }
