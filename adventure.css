@@ -66,3 +66,9 @@ body{
 	height: 899px;
 	border: black solid 5px;
 }
+#inventoryItem{
+	display: none;
+	margin: 0 auto;
+	width:  150px;
+	height:  150px;
+}
