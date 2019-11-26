@@ -1,6 +1,6 @@
 
 // Made by Bram van ballegooijen // blood and wine // Made by Bram van ballegooijen //
-// all vars // blood and wine // all vars //
+// VAR // blood and wine // VAR //
 
 var getzwaard = 'ja'
 
