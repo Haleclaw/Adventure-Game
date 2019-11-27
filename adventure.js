@@ -26,6 +26,13 @@ document.getElementById("button1").innerHTML = "Play"
 document.getElementById("button2").innerHTML = "Help"
 document.getElementById("button3").innerHTML = "Credits"
 
+document.getElementById('button1').style.display =' inline-block'
+document.getElementById('button2').style.display =' inline-block'
+document.getElementById('button3').style.display =' inline-block'
+
+achtergrond = document.getElementById('game-container')
+achtergrond.style.backgroundImage = " url('img/zwaard.jpg') ";
+
 
 document.getElementById("title").innerHTML = "Blood and Wine"
 document.getElementById("description").innerHTML = "Welkom bij Blood and wine. Dit is een game waar je via belangrijke keuzes invloed op het verhaal kan hebben "
@@ -105,7 +112,7 @@ function goblin(){
 
   
 
-  document.getElementById("button1").setAttribute('onclick',"keuze()")
+  document.getElementById("button1").setAttribute('onclick',"goblinterug()")
   document.getElementById("button2").setAttribute('onclick',"goblinAanval()")
 
   var achtergrond = document.getElementById('game-container')
@@ -144,8 +151,22 @@ if ( getzwaard == 'ja'){
 
 }
            else{
-             document.getElementById("description").innerHTML = "De goblin heeft je op een pijnlijke manier vermoord"
+             document.getElementById("description").innerHTML = "De goblin heeft je op een pijnlijke manier vermoord <br> <b>probeer het opnieuw!</b>"
+
+             document.getElementById("button1").innerHTML = "ga terug "
+             document.getElementById('button2').style.display =' none'
+
+             document.getElementById("button1").setAttribute('onclick',"menu()")
      }
+}
+function goblinterug(){
+	document.getElementById("description").innerHTML = "De goblin heeft je op een pijnlijke manier vermoord <br> <b>probeer het opnieuw!</b>"
+
+    document.getElementById("button1").innerHTML = "ga terug "
+    document.getElementById('button2').style.display =' none'
+
+    document.getElementById("button1").setAttribute('onclick',"menu()")
+ 
 }
 
 // kisten // zwaard // kisten //
@@ -188,9 +209,9 @@ function castle(){
     document.getElementById("button3").innerHTML = "Ga terug"
   
 
-    document.getElementById("button1").setAttribute('onclick',"menu()")
-    document.getElementById("button2").setAttribute('onclick',"menu()")
-    document.getElementById("button3").setAttribute('onclick',"menu()")
+    document.getElementById("button1").setAttribute('onclick',"keuze()")
+    document.getElementById("button2").setAttribute('onclick',"keuze()")
+    document.getElementById("button3").setAttribute('onclick',"keuze()")
 
 }
 
