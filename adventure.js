@@ -1,6 +1,6 @@
 
 // Made by Bram van ballegooijen // blood and wine // Made by Bram van ballegooijen //
-// VAR // blood and wine // VAR //
+// VAR // blood and wine // VAR // // VAR // blood and wine // VAR // // VAR // blood and wine // VAR // 
 
 var getzwaard = 'nee'
 var getsleutel = 'nee'
@@ -8,7 +8,8 @@ var coins = 'nee'
 var aanval ='nee'
 
 
-// inventory // blood and wine // inventory //
+// inventory // blood and wine // inventory // // inventory // blood and wine // inventory // 
+// inventory // blood and wine // inventory // // inventory // blood and wine // inventory //
 
 
 var inventory = document.createElement('div');
@@ -18,6 +19,8 @@ inventory.setAttribute('id','inventory')
 
 
 // Main menu // blood and wine // Main menu //
+// Main menu // blood and wine // Main menu //
+
 menu()
 
 
@@ -50,15 +53,19 @@ function dead(){
  if (getzwaard == 'ja') {
  	document.getElementById('zwaard').style.display = 'none'
  	document.getElementById('inventoryItem').style.display = 'none'
+ 	document.getElementById('key').style.display = 'none'
 
  	getzwaard = "nee"
  	coins = 'nee'
+ 	getsleutel =" nee"
+ 	aanval ='nee'
  }
 
 menu()
 
 }
 
+// introductie level // blood and wine // introductie level //
 // introductie level // blood and wine // introductie level //
 
 function play(){
@@ -89,6 +96,7 @@ function play(){
 }
 
 // help pagina // blood and wine // help pagina //
+// help pagina // blood and wine // help pagina //
 
 function help(){
   console.log("Help pagina")
@@ -104,6 +112,8 @@ function help(){
 }
 
 // credits // blood and wine // credits //
+// credits // blood and wine // credits //
+
 function Credits(){
   console.log("Credits pagina")
 
@@ -284,6 +294,13 @@ function castleUpgrade(){
 	   	 document.getElementById("description").innerHTML = 'Je hebt niet genoeg'
 	   }
 }
+function kistenCastle(){
+	document.getElementById("description").innerHTML = 'er zit niks in de kisten'
+
+}
+
+// gevecht deur // poort // gevecht deur // // gevecht deur // poort // gevecht deur // // gevecht deur // poort // gevecht deur //
+// gevecht deur // poort // gevecht deur // // gevecht deur // poort // gevecht deur // // gevecht deur // poort // gevecht deur //
 
 function deurCastle(){
 	console.log("level 2 // de gladiator")
@@ -291,9 +308,9 @@ function deurCastle(){
 	achtergrond = document.getElementById('game-container')
     achtergrond.style.backgroundImage = " url('img/castleguy.jpg') ";
 
-    document.getElementById("button1").innerHTML = "val hem aan"
-    document.getElementById("button2").innerHTML = "ren weg "
-    document.getElementById("button3").innerHTML = "geef jezelf over "
+    document.getElementById("button1").innerHTML = "val hem aan <br> <b>(een skilled warrior)</b>"
+    document.getElementById("button2").innerHTML = "ren weg <br> <b>(ren naar het kasteel)</b>"
+    document.getElementById("button3").innerHTML = "geef jezelf over <br><b>(laat je wapens vallen)</b>"
 
     document.getElementById("button1").setAttribute('onclick',"aanvalGuy()")
     document.getElementById("button2").setAttribute('onclick',"terugGuy()")
@@ -308,6 +325,15 @@ function aanvalGuy(){
 
      	achtergrond = document.getElementById('game-container')
         achtergrond.style.backgroundImage = " url('img/castle.jpg') ";
+
+        document.getElementById("button1").innerHTML = "ga naar buiten <br> <b>(De bossen van Evemor)</b>"
+
+        document.getElementById("button1").setAttribute('onclick',"buiten()")
+        
+        document.getElementById('button2').style.display =' none'
+        document.getElementById('button3').style.display =' none'
+
+
 	    
 } 
                else{
@@ -319,6 +345,28 @@ function aanvalGuy(){
 function terugGuy(){
 
 	castle()
+}
+function overGuy(){
+
+	document.getElementById("description").innerHTML = 'Ray heeft je een pijnlijke dood gegeven'
+
+	document.getElementById("button1").innerHTML = "ga terug <br> <b>( naar het hoofdmenu)<b> "
+    document.getElementById('button2').style.display =' none'
+    document.getElementById('button3').style.display =' none'
+
+
+    document.getElementById("button1").setAttribute('onclick',"dead()")
+
+
+}
+// level 3 // blood and wine // level 3 // // level 3 // blood and wine // level 3 // // level 3 // blood and wine // level 3 //
+// level 3 // blood and wine // level 3 // // level 3 // blood and wine // level 3 // // level 3 // blood and wine // level 3 //
+
+function buiten(){
+    
+    achtergrond = document.getElementById('game-container')
+    achtergrond.style.backgroundImage = " url('img/forrest.jpg') ";
+
 }
 
 
