@@ -41,6 +41,20 @@ button1.onclick = play;
 button2.onclick = help;
 button3.onclick = Credits;
 
+// RESET // DEAD FUNCTION // RESET //
+// RESET // DEAD FUNCTION // RESET //
+}
+function dead(){
+ if (getzwaard == 'ja') {
+ 	document.getElementById('zwaard').style.display = 'none'
+ 	document.getElementById('inventoryItem').style.display = 'none'
+
+ 	getzwaard = "nee"
+ 	coins = 'nee'
+ }
+
+menu()
+
 }
 
 // introductie level // blood and wine // introductie level //
@@ -156,7 +170,7 @@ if ( getzwaard == 'ja'){
              document.getElementById("button1").innerHTML = "ga terug "
              document.getElementById('button2').style.display =' none'
 
-             document.getElementById("button1").setAttribute('onclick',"menu()")
+             document.getElementById("button1").setAttribute('onclick',"dead()")
      }
 }
 function goblinterug(){
@@ -165,7 +179,8 @@ function goblinterug(){
     document.getElementById("button1").innerHTML = "ga terug "
     document.getElementById('button2').style.display =' none'
 
-    document.getElementById("button1").setAttribute('onclick',"menu()")
+
+    document.getElementById("button1").setAttribute('onclick',"dead()")
  
 }
 
@@ -204,14 +219,30 @@ function castle(){
 
     document.getElementById("description").innerHTML = 'Je bent nu in het kasteel wat boven de dungeon staat'
 
-    document.getElementById("button1").innerHTML = "Ga terug"
-    document.getElementById("button2").innerHTML = "Ga terug"
-    document.getElementById("button3").innerHTML = "Ga terug"
+    document.getElementById("button1").innerHTML = "onderzoek het kasteel"
+    document.getElementById("button2").innerHTML = "je gaat naar de deur"
+    document.getElementById("button3").innerHTML = "je kijkt rond voor spullen"
   
 
-    document.getElementById("button1").setAttribute('onclick',"keuze()")
-    document.getElementById("button2").setAttribute('onclick',"keuze()")
-    document.getElementById("button3").setAttribute('onclick',"keuze()")
+    document.getElementById("button1").setAttribute('onclick',"onderzoekCastle()")
+    document.getElementById("button2").setAttribute('onclick',"deurCastle()")
+    document.getElementById("button3").setAttribute('onclick',"kistenCastle()")
+
+}
+function deurCastle(){
+
+	achtergrond = document.getElementById('game-container')
+    achtergrond.style.backgroundImage = " url('img/castleguy.jpg') ";
+
+    document.getElementById("button1").innerHTML = "val hem aan"
+    document.getElementById("button2").innerHTML = "ren weg "
+    document.getElementById("button3").innerHTML = "geef jezelf over "
+
+    document.getElementById("button1").setAttribute('onclick',"aanvalGuy()")
+    document.getElementById("button2").setAttribute('onclick',"terugGuy()")
+    document.getElementById("button3").setAttribute('onclick',"overGuy()")
+
+    document.getElementById("description").innerHTML = 'Je komt strijder <b> Ray van Evemor </b> tegen'
 
 }
 
