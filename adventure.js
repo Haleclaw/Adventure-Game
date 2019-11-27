@@ -2,7 +2,10 @@
 // Made by Bram van ballegooijen // blood and wine // Made by Bram van ballegooijen //
 // VAR // blood and wine // VAR //
 
-var getzwaard = 'ja'
+var getzwaard = 'nee'
+var getsleutel = 'nee'
+var coins = 'nee'
+var aanval ='nee'
 
 
 // inventory // blood and wine // inventory //
@@ -48,8 +51,12 @@ function play(){
   document.getElementById('inventoryItem').style.display = "block"
   
   document.getElementById("button1").setAttribute('onclick',"kisten()")
-  document.getElementById("button2").setAttribute('onclick',"keuze()")
+  document.getElementById("button2").setAttribute('onclick',"deur()")
   document.getElementById("button3").setAttribute('onclick',"goblin()")
+
+  document.getElementById('button1').style.display =' inline-block'
+  document.getElementById('button2').style.display =' inline-block'
+  document.getElementById('button3').style.display =' inline-block'
 
 
   
@@ -85,9 +92,10 @@ function Credits(){
 
 // level 1 // Keuze goblin // level 1 //
 // level 1 // keuze goblin // level 1 //
+// goblin attack // goblin attack //
 
 function goblin(){
-
+  if(aanval == 'nee'){
   document.getElementById("description").innerHTML = "een goblin genaamt <b>ARCO DE GENIEPIGE</b> komt achter de boekenkasten vandaan  en steelt al je geld! HIIIHAAAA.... <br>"
   
   document.getElementById("button1").innerHTML = "ren weg van de Goblin"
@@ -98,25 +106,92 @@ function goblin(){
   
 
   document.getElementById("button1").setAttribute('onclick',"keuze()")
-  document.getElementById("button2").setAttribute('onclick',"keuze()")
-  document.getElementById("button3").setAttribute('onclick',"keuze()")
+  document.getElementById("button2").setAttribute('onclick',"goblinAanval()")
 
   var achtergrond = document.getElementById('game-container')
   achtergrond.style.backgroundImage = " url('img/dungeonGoblin.jpg') ";
+}
+            else{
+            document.getElementById("description").innerHTML = " er is verder niks meer in de kamer"
+            }
 
 }
-function kisten(){
+
+function goblinAanval(){
 if ( getzwaard == 'ja'){
+    document.getElementById("description").innerHTML = "je hebt de goblin verslaan! je hebt je geld terug en een sleutel gekregen"
+    document.getElementById('inventoryItem').style.display = 'block'
+
+
+    document.getElementById("button1").innerHTML = "loop terug "
+    document.getElementById('button2').style.display =' none'
+
+    document.getElementById("button1").setAttribute('onclick',"play()")
+
+    var key = document.createElement('img');
+    inventory.appendChild(key);
+    key.setAttribute('id','key')
+    key.src = "img/sleutel.png"
+
+    achtergrond = document.getElementById('game-container')
+    achtergrond.style.backgroundImage = " url('img/dungeon.jpg') ";
+
+
+    getsleutel = 'ja'
+    coins = "ja"
+    aanval ='ja'
+
+
+}
+           else{
+             document.getElementById("description").innerHTML = "De goblin heeft je op een pijnlijke manier vermoord"
+     }
+}
+
+// kisten // zwaard // kisten //
+// kisten // zwaard // kisten //
+
+function kisten(){
+if ( getzwaard == 'nee'){
 	document.getElementById("description").innerHTML = "je hebt een oud zwaard gevonden in een van de kisten"
     var zwaard = document.createElement('img');
     inventory.appendChild(zwaard);
     zwaard.setAttribute('id','zwaard')
     zwaard.src = "img/zwaard.png"
-    getzwaard = 'nee'
+    getzwaard = 'ja'
     }
-      else{
-      	document.getElementById("description").innerHTML = "er zit verder niks meer in de kisten"
+           else{
+      	     document.getElementById("description").innerHTML = "er zit verder niks meer in de kisten"
       }
+}
+function deur(){
+ if ( getsleutel == 'ja'){
+ 	 castle()
+
+ }
+ 	        else{
+	          document.getElementById("description").innerHTML = "je hebt een sleutel nodig voor deze deur"
+}
+}
+
+// level 2 // blood and wine // level 2 //
+// level 2 // blood and wine // level 2 //
+function castle(){
+
+    achtergrond = document.getElementById('game-container')
+    achtergrond.style.backgroundImage = " url('img/castle.jpg') ";
+
+    document.getElementById("description").innerHTML = 'Je bent nu in het kasteel wat boven de dungeon staat'
+
+    document.getElementById("button1").innerHTML = "Ga terug"
+    document.getElementById("button2").innerHTML = "Ga terug"
+    document.getElementById("button3").innerHTML = "Ga terug"
+  
+
+    document.getElementById("button1").setAttribute('onclick',"menu()")
+    document.getElementById("button2").setAttribute('onclick',"menu()")
+    document.getElementById("button3").setAttribute('onclick',"menu()")
+
 }
 
 
