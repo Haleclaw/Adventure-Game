@@ -53,7 +53,10 @@ function dead(){
  if (getzwaard == 'ja') {
  	document.getElementById('zwaard').style.display = 'none'
  	document.getElementById('inventoryItem').style.display = 'none'
- 	document.getElementById('key').style.display = 'none'
+ 	    if(getsleutel =='ja'){
+ 	    	 document.getElementById('key').style.display = 'none'
+ 	    }
+
 
  	getzwaard = "nee"
  	coins = 'nee'
