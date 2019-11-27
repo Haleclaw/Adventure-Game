@@ -372,6 +372,19 @@ function buiten(){
     achtergrond = document.getElementById('game-container')
     achtergrond.style.backgroundImage = " url('img/forrest.jpg') ";
 
+    document.getElementById('button1').style.display =' inline-block'
+    document.getElementById('button2').style.display =' inline-block'
+    document.getElementById('button3').style.display =' inline-block'
+
+    document.getElementById("button1").innerHTML = "test"
+    document.getElementById("button2").innerHTML = "test"
+    document.getElementById("button3").innerHTML = "test"
+  
+
+    document.getElementById("button1").setAttribute('onclick',"test()")
+    document.getElementById("button2").setAttribute('onclick',"test()")
+    document.getElementById("button3").setAttribute('onclick',"test()")
+
 }
 
 
