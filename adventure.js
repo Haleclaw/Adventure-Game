@@ -50,16 +50,13 @@ button3.onclick = Credits;
 // RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET //
 }
 function dead(){
- if (getzwaard == 'ja','upgrade'){ 
+ if (getzwaard == 'ja','nee','upgrade'){ 
  	document.getElementById('zwaard').style.display = 'none'
  	document.getElementById('inventoryItem').style.display = 'none'
- 	    if (getsleutel =='ja','nee'){
+ 	    if (getsleutel =='ja'){
  	    	 document.getElementById('key').style.display = 'none'
  	    }
  	             
-
-
-
  	getzwaard = "nee"
  	coins = 'nee'
  	getsleutel =" nee"
