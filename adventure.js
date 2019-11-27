@@ -230,6 +230,9 @@ function deur(){
 	console.log("level 1 // de deur")
 
  if ( getsleutel == 'ja'){
+
+ 	key.src = "img/sleutelkapot.png"
+
  	 castle()
 
  }
@@ -325,6 +328,8 @@ function aanvalGuy(){
 
      	achtergrond = document.getElementById('game-container')
         achtergrond.style.backgroundImage = " url('img/castle.jpg') ";
+
+        zwaard.src = "img/axebloody.png"
 
         document.getElementById("button1").innerHTML = "ga naar buiten <br> <b>(De bossen van Evemor)</b>"
 
