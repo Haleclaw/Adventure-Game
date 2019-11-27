@@ -43,8 +43,8 @@ button1.onclick = play;
 button2.onclick = help;
 button3.onclick = Credits;
 
-// RESET // DEAD FUNCTION // RESET //
-// RESET // DEAD FUNCTION // RESET //
+// RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET //
+// RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET //
 }
 function dead(){
  if (getzwaard == 'ja') {
@@ -119,8 +119,8 @@ function Credits(){
 
 }
 
-// level 1 // Keuze goblin // level 1 //
-// level 1 // keuze goblin // level 1 //
+// level 1 // Keuze goblin // level 1 // // level 1 // Keuze goblin // level 1 // // level 1 // Keuze goblin // level 1 // 
+// level 1 // keuze goblin // level 1 // // level 1 // Keuze goblin // level 1 // // level 1 // Keuze goblin // level 1 //
 // goblin attack // goblin attack //
 
 function goblin(){
@@ -130,7 +130,7 @@ function goblin(){
   document.getElementById("description").innerHTML = "een goblin genaamt <b>ARCO DE GENIEPIGE</b> komt achter de boekenkasten vandaan  en steelt al je geld! HIIIHAAAA.... <br>"
   
   document.getElementById("button1").innerHTML = "ren weg van de Goblin <br> <b>(je hebt niks om naartoe te rennen)</b>"
-  document.getElementById("button2").innerHTML = "Val de goblin aan"
+  document.getElementById("button2").innerHTML = "Val de goblin aan <br> <b>(de goblin is zeer sterk)</b>"
   document.getElementById('button3').style.display =' none'
   document.getElementById('inventoryItem').style.display = 'none'
 
@@ -152,11 +152,11 @@ function goblinAanval(){
 	console.log("level 1 // verslagen")
 
 if ( getzwaard == 'ja'){
-    document.getElementById("description").innerHTML = "je hebt de goblin verslaan! je hebt je geld terug en een sleutel gekregen"
+    document.getElementById("description").innerHTML = "je hebt de goblin verslaan! <br> <b>(je hebt je geld terug en een sleutel gekregen)</b>"
     document.getElementById('inventoryItem').style.display = 'block'
 
 
-    document.getElementById("button1").innerHTML = "loop terug "
+    document.getElementById("button1").innerHTML = "loop terug <br> <b>(naar de hoofdkamer)</b> "
     document.getElementById('button2').style.display =' none'
 
     document.getElementById("button1").setAttribute('onclick',"play()")
@@ -179,7 +179,7 @@ if ( getzwaard == 'ja'){
            else{
              document.getElementById("description").innerHTML = "De goblin heeft je op een pijnlijke manier vermoord <br> <b>probeer het opnieuw!</b>"
 
-             document.getElementById("button1").innerHTML = "ga terug "
+             document.getElementById("button1").innerHTML = "ga terug <br> <b>( naar het hoofdmenu)<b> "
              document.getElementById('button2').style.display =' none'
 
              document.getElementById("button1").setAttribute('onclick',"dead()")
@@ -190,7 +190,7 @@ function goblinterug(){
 
 	document.getElementById("description").innerHTML = "De goblin heeft je op een pijnlijke manier vermoord <br> <b>probeer het opnieuw!</b>"
 
-    document.getElementById("button1").innerHTML = "ga terug "
+    document.getElementById("button1").innerHTML = "ga terug <br> <b>( naar het hoofdmenu)<b> "
     document.getElementById('button2').style.display =' none'
 
 
@@ -198,8 +198,8 @@ function goblinterug(){
  
 }
 
-// kisten // zwaard // kisten //
-// kisten // zwaard // kisten //
+// kisten // zwaard // kisten // // kisten // zwaard // kisten // // kisten // zwaard // kisten // // kisten // zwaard // kisten //
+// kisten // zwaard // kisten // // kisten // zwaard // kisten // // kisten // zwaard // kisten // // kisten // zwaard // kisten //
 
 function kisten(){
 	console.log("level 1 // kisten doorzoeken")
@@ -228,40 +228,62 @@ function deur(){
 }
 }
 
-// level 2 // blood and wine // level 2 //
-// level 2 // blood and wine // level 2 //
+// level 2 // blood and wine // level 2 // // level 2 // blood and wine // level 2 // // level 2 // blood and wine // level 2 //
+// level 2 // blood and wine // level 2 // // level 2 // blood and wine // level 2 // // level 2 // blood and wine // level 2 //
 function castle(){
 	console.log("level 2 // het kasteel")
 
     achtergrond = document.getElementById('game-container')
     achtergrond.style.backgroundImage = " url('img/castle.jpg') ";
 
-    document.getElementById("description").innerHTML = 'Je bent nu in het kasteel wat boven de dungeon staat'
+    document.getElementById("description").innerHTML = 'Je bent nu in het kasteel wat boven de dungeon staat <br> <b> Welkom in kasteel blackwater</br>'
 
-    document.getElementById("button1").innerHTML = "onderzoek het kasteel"
-    document.getElementById("button2").innerHTML = "je gaat naar de deur"
-    document.getElementById("button3").innerHTML = "je kijkt rond voor spullen"
+    document.getElementById("button1").innerHTML = "onderzoek het kasteel <br> <b>(een koude rilling)</b>"
+    document.getElementById("button2").innerHTML = "je gaat naar de deur <br> <b>(een grote deur...)</b>"
+    document.getElementById("button3").innerHTML = "je kijkt rond voor spullen <br> <b>(je ziet een paar kisten)</b>"
   
 
     document.getElementById("button1").setAttribute('onclick',"onderzoekCastle()")
     document.getElementById("button2").setAttribute('onclick',"deurCastle()")
     document.getElementById("button3").setAttribute('onclick',"kistenCastle()")
 
+    document.getElementById('button1').style.display =' inline-block'
+    document.getElementById('button2').style.display =' inline-block'
+    document.getElementById('button3').style.display =' inline-block'
+
+
 }
+// dwerg upgrade // blood and wine // dwerg upgrade // // dwerg upgrade // blood and wine // dwerg upgrade //
+// dwerg upgrade // blood and wine // dwerg upgrade // // dwerg upgrade // blood and wine // dwerg upgrade //
+
 function onderzoekCastle(){
 	console.log("level 2 // de dwerg")
 
-	document.getElementById("description").innerHTML = 'Je komt een dwerg genaamt <b>Dennis van oakenshild tegen</b>'
+	document.getElementById("description").innerHTML = 'Je komt een dwerg genaamt <b>Dennis van oakenshild</b> tegen'
 
 	achtergrond = document.getElementById('game-container')
     achtergrond.style.backgroundImage = " url('img/castleDwarf.jpg') ";
 
     document.getElementById("button1").innerHTML = "je verbeterd je zwaard <br> <b>(voor coins)<b>"
     document.getElementById("button2").innerHTML = "je gaat terug <br> <b>( terug naar kasteel hall)</b>"
+
+    document.getElementById("button1").setAttribute('onclick',"castleUpgrade()")
+    document.getElementById("button2").setAttribute('onclick',"castle()")
     
     document.getElementById('button3').style.display =' none'
 }
+function castleUpgrade(){
+	if (coins == 'ja'){
+		zwaard.src = "img/axe.png"
+		getzwaard = 'upgrade'
+		coins = 'nee'
 
+		document.getElementById('inventoryItem').style.display = 'none'
+	}
+	   else{
+	   	 document.getElementById("description").innerHTML = 'Je hebt niet genoeg'
+	   }
+}
 
 function deurCastle(){
 	console.log("level 2 // de gladiator")
@@ -281,11 +303,19 @@ function deurCastle(){
 
 }
 function aanvalGuy(){
+     if( getzwaard == 'upgrade'){
+     	document.getElementById("description").innerHTML = 'Je hebt de machtige Ray verslagen in het gevecht!'
 
-	document.getElementById("description").innerHTML = 'Je zwaard is gebroken door de machtige <b>Ray</b>'
+     	achtergrond = document.getElementById('game-container')
+        achtergrond.style.backgroundImage = " url('img/castle.jpg') ";
+	    
+} 
+               else{
+               	  document.getElementById("description").innerHTML = 'Je zwaard is gebroken door de machtige <b>Ray</b>'
 
-	zwaard.src = "img/zwaardkapot.png"
-}
+	              zwaard.src = "img/zwaardkapot.png"
+               }
+           }
 function terugGuy(){
 
 	castle()
