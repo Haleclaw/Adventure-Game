@@ -6,7 +6,8 @@ var getzwaard = 'nee'
 var getsleutel = 'nee'
 var coins = 'nee'
 var aanval ='nee'
-
+var helmet ='nee'
+var armor ='nee '
 
 // inventory // blood and wine // inventory // // inventory // blood and wine // inventory // 
 // inventory // blood and wine // inventory // // inventory // blood and wine // inventory //
@@ -50,8 +51,8 @@ button3.onclick = Credits;
 // RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET //
 }
 function dead(){
- if (getzwaard == 'ja','nee','upgrade'){ 
- 	document.getElementById('zwaard').style.display = 'none'
+ menu()
+ if (getzwaard == 'ja','upgrade'){ 
 
    var removeVar = document.getElementById('zwaard')
    removeVar.parentNode.removeChild(removeVar);
@@ -67,7 +68,8 @@ function dead(){
  	aanval ='nee'
  }
 
-menu()
+
+
 
 }
 
@@ -259,16 +261,15 @@ function castle(){
 
     document.getElementById("button1").innerHTML = "onderzoek het kasteel <br> <b>(een koude rilling)</b>"
     document.getElementById("button2").innerHTML = "je gaat naar de deur <br> <b>(een grote deur...)</b>"
-    document.getElementById("button3").innerHTML = "je kijkt rond voor spullen <br> <b>(je ziet een paar kisten)</b>"
+   
   
 
     document.getElementById("button1").setAttribute('onclick',"onderzoekCastle()")
     document.getElementById("button2").setAttribute('onclick',"deurCastle()")
-    document.getElementById("button3").setAttribute('onclick',"kistenCastle()")
 
     document.getElementById('button1').style.display =' inline-block'
     document.getElementById('button2').style.display =' inline-block'
-    document.getElementById('button3').style.display =' inline-block'
+    document.getElementById('button3').style.display =' none'
 
 
 }
@@ -303,10 +304,7 @@ function castleUpgrade(){
 	   	 document.getElementById("description").innerHTML = 'Je hebt niet genoeg'
 	   }
 }
-function kistenCastle(){
-	document.getElementById("description").innerHTML = 'er zit niks in de kisten'
 
-}
 
 // gevecht deur // poort // gevecht deur // // gevecht deur // poort // gevecht deur // // gevecht deur // poort // gevecht deur //
 // gevecht deur // poort // gevecht deur // // gevecht deur // poort // gevecht deur // // gevecht deur // poort // gevecht deur //
@@ -325,10 +323,15 @@ function deurCastle(){
     document.getElementById("button2").setAttribute('onclick',"terugGuy()")
     document.getElementById("button3").setAttribute('onclick',"overGuy()")
 
+    document.getElementById('button2').style.display =' inline-block'
+    document.getElementById('button3').style.display =' inline-block'
+
     document.getElementById("description").innerHTML = 'Je komt strijder <b> Ray van Evemor </b> tegen'
 
 }
 function aanvalGuy(){
+	console.log("level 2 // gewonnen")
+
      if( getzwaard == 'upgrade'){
      	document.getElementById("description").innerHTML = 'Je hebt de machtige Ray verslagen in het gevecht!'
 
@@ -359,6 +362,7 @@ function terugGuy(){
 	castle()
 }
 function overGuy(){
+	console.log("level 2 // vermoord")
 
 	document.getElementById("description").innerHTML = 'Ray heeft je een pijnlijke dood gegeven'
 
@@ -375,22 +379,48 @@ function overGuy(){
 // level 3 // blood and wine // level 3 // // level 3 // blood and wine // level 3 // // level 3 // blood and wine // level 3 //
 
 function buiten(){
+	console.log("level 3 // de bossen")
     
     achtergrond = document.getElementById('game-container')
     achtergrond.style.backgroundImage = " url('img/forrest.jpg') ";
 
+    document.getElementById("description").innerHTML = 'je bent momenteel in de bossen van <b> Evemor </br>'
+
     document.getElementById('button1').style.display =' inline-block'
     document.getElementById('button2').style.display =' inline-block'
-    document.getElementById('button3').style.display =' inline-block'
+    document.getElementById('button3').style.display =' none'
 
-    document.getElementById("button1").innerHTML = "test"
-    document.getElementById("button2").innerHTML = "test"
-    document.getElementById("button3").innerHTML = "test"
+    document.getElementById("button1").innerHTML = "je loopt het pad af <br> <b> (een oud huis in de verte) </b>"
+    document.getElementById("button2").innerHTML = "je gaat van het pad af <br> <b> (je hoort een oude man) </b>"
+    
   
 
-    document.getElementById("button1").setAttribute('onclick',"test()")
-    document.getElementById("button2").setAttribute('onclick',"test()")
-    document.getElementById("button3").setAttribute('onclick',"test()")
+    document.getElementById("button1").setAttribute('onclick',"bossenPad()")
+    document.getElementById("button2").setAttribute('onclick',"bossenWizzard()")
+
+}
+function bossenWizzard(){
+	console.log("level 3 // de wizzard")
+
+	document.getElementById("description").innerHTML = 'je bent een koppige tovenaar tegen gekomem genaamt <b> Bramius </b> <br> hij wilt graag jou gebroken sleutel voor armor ruilen!'
+
+	document.getElementById("button1").innerHTML = "je ruilt de sleutel"
+    document.getElementById("button2").innerHTML = "je gaat terug"
+
+	achtergrond = document.getElementById('game-container')
+    achtergrond.style.backgroundImage = " url('img/forrestwizard.jpg') ";
+
+
+}
+function bossenPad(){
+	console.log("level 3 // de spider")
+
+	document.getElementById("description").innerHTML = 'je komt een mutant spin tegen genaamt <b> BESSIE DE GROTE </b>'
+
+	achtergrond = document.getElementById('game-container')
+    achtergrond.style.backgroundImage = " url('img/forrestspider.jpg') ";
+
+
 
 }
 
