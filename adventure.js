@@ -52,6 +52,10 @@ button3.onclick = Credits;
 function dead(){
  if (getzwaard == 'ja','nee','upgrade'){ 
  	document.getElementById('zwaard').style.display = 'none'
+
+   var removeVar = document.getElementById('zwaard')
+   removeVar.parentNode.removeChild(removeVar);
+
  	document.getElementById('inventoryItem').style.display = 'none'
  	    if (getsleutel =='ja'){
  	    	 document.getElementById('key').style.display = 'none'
@@ -332,6 +336,7 @@ function aanvalGuy(){
         achtergrond.style.backgroundImage = " url('img/castle.jpg') ";
 
         zwaard.src = "img/axebloody.png"
+
 
         document.getElementById("button1").innerHTML = "ga naar buiten <br> <b>(De bossen van Evemor)</b>"
 
