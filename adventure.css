@@ -72,14 +72,7 @@ body{
 	width:  150px;
 	height:  150px;
 }
-#zwaard{
-	margin-top: 10px;
-	margin-left: 40px;
-	width:  150px;
-	height:  150px;
-
-}
-#key{
+#zwaard,#helm,#key,#armor{
 	margin-top: 10px;
 	margin-left: 40px;
 	width:  150px;

@@ -404,14 +404,46 @@ function bossenWizzard(){
 
 	document.getElementById("description").innerHTML = 'je bent een koppige tovenaar tegen gekomem genaamt <b> Bramius </b> <br> hij wilt graag jou gebroken sleutel voor armor ruilen!'
 
-	document.getElementById("button1").innerHTML = "je ruilt de sleutel"
-    document.getElementById("button2").innerHTML = "je gaat terug"
+	document.getElementById("button1").innerHTML = "je ruilt de sleutel <br> <b> (Ruilen) </b>"
+    document.getElementById("button2").innerHTML = "je gaat terug <br> <b> (terug naar het pad) </b>"
+
+    document.getElementById("button1").setAttribute('onclick',"Wizzard()")
+    document.getElementById("button2").setAttribute('onclick',"buiten()")
 
 	achtergrond = document.getElementById('game-container')
     achtergrond.style.backgroundImage = " url('img/forrestwizard.jpg') ";
 
-
+// wizzard // ARMOR // wizzard // ARMOR // // wizzard // ARMOR // wizzard // ARMOR // // wizzard // ARMOR // wizzard // ARMOR //
+// wizzard // ARMOR // wizzard // ARMOR // // wizzard // ARMOR // wizzard // ARMOR // // wizzard // ARMOR // wizzard // ARMOR //
 }
+function Wizzard(){
+	console.log("level 3 // de sleutel")
+	if ( getsleutel = 'ja'){
+
+    var gethelmet = document.createElement('img');
+    inventory.appendChild(gethelmet);
+    gethelmet.setAttribute('id','helm')
+    gethelmet.src = "img/Helmet.png"
+
+	var getarmor = document.createElement('img');
+    inventory.appendChild(getarmor);
+    getarmor.setAttribute('id','armor')
+    getarmor.src = "img/Armor.png"
+
+    getsleutel = 'nee'
+
+     document.getElementById('key').style.display =' none'
+                 
+     }
+                 else{
+                 	document.getElementById("description").innerHTML = 'je hebt geen sleutel'
+                 }
+
+    
+}
+// SPINNEN AANVAL // // SPINNEN AANVAL // // SPINNEN AANVAL // // SPINNEN AANVAL // // SPINNEN AANVAL //
+// SPINNEN AANVAL // // SPINNEN AANVAL // // SPINNEN AANVAL // // SPINNEN AANVAL // // SPINNEN AANVAL //
+
 function bossenPad(){
 	console.log("level 3 // de spider")
 
@@ -419,6 +451,12 @@ function bossenPad(){
 
 	achtergrond = document.getElementById('game-container')
     achtergrond.style.backgroundImage = " url('img/forrestspider.jpg') ";
+
+    document.getElementById("button1").innerHTML = "val hem aan <br> <b> (aanvallen) </b>"
+    document.getElementById("button2").innerHTML = "ren weg <br> <b> (de spin is sneller) </b>"
+
+    document.getElementById("button1").setAttribute('onclick',"bossenAanval()")
+    document.getElementById("button2").setAttribute('onclick',"bossenRennen()")
 
 
 
