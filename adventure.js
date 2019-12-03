@@ -507,8 +507,8 @@ function volcano(){
 	   achtergrond = document.getElementById('game-container')
        achtergrond.style.backgroundImage = " url('img/vulcano.jpg') ";
 
-       document.getElementById("button1").setAttribute('onclick',"test()")
-       document.getElementById("button2").setAttribute('onclick',"test()")
+       document.getElementById("button1").setAttribute('onclick',"volcanoGrot()")
+       document.getElementById("button2").setAttribute('onclick',"volcanoPad()")
 
        document.getElementById("button1").innerHTML = "je onderzoekt de plek <br> <b> (doorzoekt grotten) </b>"
        document.getElementById("button2").innerHTML = "je volgt verder het pad <br> <b> (volg het pad) </b>"
@@ -516,6 +516,32 @@ function volcano(){
        document.getElementById('button1').style.display =' inline-block'
        document.getElementById('button2').style.display =' inline-block'
        document.getElementById('button3').style.display =' none'
+}
+// IMP GEVECHT // LEVEL 4 //  // IMP GEVECHT // LEVEL 4 //  // IMP GEVECHT // LEVEL 4 // // IMP GEVECHT // LEVEL 4 // 
+// IMP GEVECHT // LEVEL 4 //  // IMP GEVECHT // LEVEL 4 //  // IMP GEVECHT // LEVEL 4 // // IMP GEVECHT // LEVEL 4 // 
+function volcanoGrot(){
+
+	   document.getElementById("description").innerHTML = 'je komt een IMP tegen genaamt Yirendor de zwarte'
+
+	   document.getElementById("button1").innerHTML = "val hem aan <br> <b> (je valt hem aan) </b>"
+       document.getElementById("button2").innerHTML = "ren weg <br> <b> (ga terug) </b>"
+
+       document.getElementById("button1").setAttribute('onclick',"volcanoAanval()")
+       document.getElementById("button2").setAttribute('onclick',"volcano()")
+
+	   achtergrond = document.getElementById('game-container')
+       achtergrond.style.backgroundImage = " url('img/vulcanoguy.jpg') ";
+}
+function volcanoAanval(){
+
+	  document.getElementById("description").innerHTML = 'De imp heeft je wapen vernietigd'
+
+	  document.getElementById("button1").innerHTML = "geef je zelf over <br> <b> (verloren) </b>"
+      document.getElementById("button2").innerHTML = "ren weg <br> <b> (ga terug) </b"
+
+      document.getElementById("button1").setAttribute('onclick',"volcanoVerslagen()")
+       document.getElementById("button2").setAttribute('onclick',"volcano()")
+
 }
 
 
