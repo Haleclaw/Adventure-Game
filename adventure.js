@@ -49,6 +49,7 @@ button3.onclick = Credits;
 
 // RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET //
 // RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET //
+// Only use for reset //
 }
 function dead(){
  menu()
@@ -57,15 +58,25 @@ function dead(){
    var removeVar = document.getElementById('zwaard')
    removeVar.parentNode.removeChild(removeVar);
 
- 	document.getElementById('inventoryItem').style.display = 'none'
- 	    if (getsleutel =='ja'){
- 	    	 document.getElementById('key').style.display = 'none'
- 	    }
+   document.getElementById('inventoryItem').style.display = 'none'
+
+ 	         if (getsleutel =='ja','nee'){
+ 	    	      document.getElementById('key').style.display = 'none'
+                }
+ 	    	             if(armor == 'ja'){
+ 	    	      	          var removeVar = document.getElementById('armor')
+                               removeVar.parentNode.removeChild(removeVar);
+
+                               var removeVar = document.getElementById('helm')
+                               removeVar.parentNode.removeChild(removeVar);
+ 	    	      }
+ 	    
  	             
  	getzwaard = "nee"
  	coins = 'nee'
- 	getsleutel =" nee"
+ 	getsleutel ="nee"
  	aanval ='nee'
+ 	armor ='nee'
  }
 
 
@@ -418,7 +429,7 @@ function bossenWizzard(){
 }
 function Wizzard(){
 	console.log("level 3 // de sleutel")
-	if ( getsleutel = 'ja'){
+	if ( getsleutel == 'ja'){
 
     var gethelmet = document.createElement('img');
     inventory.appendChild(gethelmet);
@@ -431,6 +442,7 @@ function Wizzard(){
     getarmor.src = "img/Armor.png"
 
     getsleutel = 'nee'
+    armor ='ja'
 
      document.getElementById('key').style.display =' none'
                  
@@ -457,11 +469,54 @@ function bossenPad(){
 
     document.getElementById("button1").setAttribute('onclick',"bossenAanval()")
     document.getElementById("button2").setAttribute('onclick',"bossenRennen()")
-
-
-
 }
 
+function bossenRennen(){
+	console.log("level 3 // verslagen")
+
+	document.getElementById("description").innerHTML = 'je heb verslagen door <b> BESSIE DE GROTE </b>'
+
+	document.getElementById("button1").innerHTML = "ga terug <br> <b> (naar hoofdmenu) </b>"
+	
+	document.getElementById("button1").setAttribute('onclick',"dead()")
+
+	document.getElementById('button2').style.display =' none'
+}
+function bossenAanval(){
+	console.log("level 3 // gewonnen")
+	if( armor == 'ja'){
+
+	   document.getElementById("description").innerHTML = 'je heb <b> BESSIE DE GROTE </b> verslagen en vervolg je reis'
+
+	   document.getElementById("button1").innerHTML = "je gaat verder op je reis <br> <b> (je volgt het pad) </b>"
+	   document.getElementById('button2').style.display =' none'
+
+	   document.getElementById("button1").setAttribute('onclick',"volcano()")
+	}
+               else{
+               	  bossenRennen()
+               }
+}
+// level 4 // volcano // level 4 // // level 4 // volcano // level 4 // // level 4 // volcano // level 4 //
+// level 4 // volcano // level 4 // // level 4 // volcano // level 4 // // level 4 // volcano // level 4 //
+
+function volcano(){
+
+	   document.getElementById("description").innerHTML = 'je bent nu in het vervloekte landscap van Evemor'
+
+	   achtergrond = document.getElementById('game-container')
+       achtergrond.style.backgroundImage = " url('img/vulcano.jpg') ";
+
+       document.getElementById("button1").setAttribute('onclick',"test()")
+       document.getElementById("button2").setAttribute('onclick',"test()")
+
+       document.getElementById("button1").innerHTML = "je onderzoekt de plek <br> <b> (doorzoekt grotten) </b>"
+       document.getElementById("button2").innerHTML = "je volgt verder het pad <br> <b> (volg het pad) </b>"
+
+       document.getElementById('button1').style.display =' inline-block'
+       document.getElementById('button2').style.display =' inline-block'
+       document.getElementById('button3').style.display =' none'
+}
 
 
 
