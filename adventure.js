@@ -135,6 +135,7 @@ function play(){
 }
 // music stop function // // music stop function // // music stop function // // music stop function // 
 // music stop function // // music stop function // // music stop function // // music stop function //
+// NIET AANZITTEN HET WERKT EINDELIJK //
 
 function startBackground(){
 if ( getal == 1){
@@ -259,6 +260,10 @@ if ( getzwaard == 'ja'){
              document.getElementById("button1").innerHTML = "ga terug <br> <b>( naar het hoofdmenu)<b> "
              document.getElementById('button2').style.display =' none'
 
+             var background_music = new Audio();
+             background_music.src = " music/dead.mp3";
+             background_music.play();
+
              document.getElementById("button1").setAttribute('onclick',"dead()")
      }
 }
@@ -269,6 +274,10 @@ function goblinterug(){
 
     document.getElementById("button1").innerHTML = "ga terug <br> <b>( naar het hoofdmenu)<b> "
     document.getElementById('button2').style.display =' none'
+
+    var background_music = new Audio();
+    background_music.src = " music/dead.mp3";
+    background_music.play();
 
 
     document.getElementById("button1").setAttribute('onclick',"dead()")
@@ -299,6 +308,10 @@ function deur(){
  if ( getsleutel == 'ja'){
 
  	key.src = "img/sleutelkapot.png"
+
+ 	var background_music = new Audio();
+    background_music.src = " music/door.mp3";
+    background_music.play();
 
  	 castle()
 
@@ -348,6 +361,12 @@ function onderzoekCastle(){
 
     document.getElementById("button1").setAttribute('onclick',"castleUpgrade()")
     document.getElementById("button2").setAttribute('onclick',"castle()")
+
+    var background_music = new Audio();
+    background_music.src = " music/dwerg.mp3";
+    background_music.play();
+
+
     
     document.getElementById('button3').style.display =' none'
 }
@@ -441,6 +460,10 @@ function overGuy(){
     background_music.src = " music/sword.mp3";
     background_music.play();
 
+    var background_music = new Audio();
+    background_music.src = " music/dead.mp3";
+    background_music.play();
+
 
     document.getElementById("button1").setAttribute('onclick',"dead()")
 
@@ -480,6 +503,10 @@ function bossenWizzard(){
 
     document.getElementById("button1").setAttribute('onclick',"Wizzard()")
     document.getElementById("button2").setAttribute('onclick',"buiten()")
+
+    var background_music = new Audio();
+    background_music.src = " music/dwerg.mp3";
+    background_music.play();
 
 	achtergrond = document.getElementById('game-container')
     achtergrond.style.backgroundImage = " url('img/forrestwizard.jpg') ";
@@ -529,6 +556,10 @@ function bossenPad(){
 
     document.getElementById("button1").setAttribute('onclick',"bossenAanval()")
     document.getElementById("button2").setAttribute('onclick',"bossenRennen()")
+
+    var background_music = new Audio();
+    background_music.src = " music/spider.mp3";
+    background_music.play();
 }
 
 function bossenRennen(){
@@ -541,6 +572,10 @@ function bossenRennen(){
 	document.getElementById("button1").setAttribute('onclick',"dead()")
 
 	document.getElementById('button2').style.display =' none'
+
+	var background_music = new Audio();
+    background_music.src = " music/dead.mp3";
+    background_music.play();
 }
 function bossenAanval(){
 	console.log("level 3 // gewonnen")
@@ -550,6 +585,10 @@ function bossenAanval(){
 
 	   document.getElementById("button1").innerHTML = "je gaat verder op je reis <br> <b> (je volgt het pad) </b>"
 	   document.getElementById('button2').style.display =' none'
+
+	   var background_music = new Audio();
+       background_music.src = " music/sword.mp3";
+       background_music.play();
 
 	   document.getElementById("button1").setAttribute('onclick',"volcano()")
 	}
@@ -590,6 +629,10 @@ function volcanoGrot(){
 
        document.getElementById("button1").setAttribute('onclick',"volcanoAanval()")
        document.getElementById("button2").setAttribute('onclick',"volcano()")
+
+       var background_music = new Audio();
+       background_music.src = " music/imp.mp3";
+       background_music.play();
 
 	   achtergrond = document.getElementById('game-container')
        achtergrond.style.backgroundImage = " url('img/vulcanoguy.jpg') ";
