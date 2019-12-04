@@ -65,6 +65,8 @@ button3.onclick = Credits;
 // Only use for reset //
 }
 function dead(){
+ audio = 'ja'
+
  startBackground();
 
 
@@ -131,6 +133,9 @@ function play(){
 
   
 }
+// music stop function // // music stop function // // music stop function // // music stop function // 
+// music stop function // // music stop function // // music stop function // // music stop function //
+
 function startBackground(){
 if ( getal == 1){
 if( audio == 'nee'){
@@ -138,8 +143,7 @@ if( audio == 'nee'){
   background_music.src = " music/theme.mp3";
   background_music.play();
   getal ++
-  audio = 'ja'
-}
+  }
 }
   else if( audio =='ja'){
   	background_music.pause();
@@ -205,6 +209,10 @@ function goblin(){
 
   var achtergrond = document.getElementById('game-container')
   achtergrond.style.backgroundImage = " url('img/dungeonGoblin.jpg') ";
+
+    var background_music = new Audio();
+    background_music.src = " music/orc.mp3";
+    background_music.play();
 }
             else{
             document.getElementById("description").innerHTML = " er is verder niks meer in de kamer"
@@ -399,6 +407,10 @@ function aanvalGuy(){
         document.getElementById('button2').style.display =' none'
         document.getElementById('button3').style.display =' none'
 
+        var background_music = new Audio();
+        background_music.src = " music/sword.mp3";
+        background_music.play();
+
 
 	    
 } 
@@ -406,6 +418,10 @@ function aanvalGuy(){
                	  document.getElementById("description").innerHTML = 'Je zwaard is gebroken door de machtige <b>Ray</b>'
 
 	              zwaard.src = "img/zwaardkapot.png"
+
+	              var background_music = new Audio();
+                  background_music.src = " music/swordbroken.mp3";
+                  background_music.play();
                }
            }
 function terugGuy(){
@@ -420,6 +436,10 @@ function overGuy(){
 	document.getElementById("button1").innerHTML = "ga terug <br> <b>( naar het hoofdmenu)<b> "
     document.getElementById('button2').style.display =' none'
     document.getElementById('button3').style.display =' none'
+
+    var background_music = new Audio();
+    background_music.src = " music/sword.mp3";
+    background_music.play();
 
 
     document.getElementById("button1").setAttribute('onclick',"dead()")
