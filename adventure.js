@@ -2,12 +2,17 @@
 // Made by Bram van ballegooijen // blood and wine // Made by Bram van ballegooijen //
 // VAR // blood and wine // VAR // // VAR // blood and wine // VAR // // VAR // blood and wine // VAR // 
 
+
+
 var getzwaard = 'nee'
 var getsleutel = 'nee'
 var coins = 'nee'
 var aanval ='nee'
 var helmet ='nee'
 var armor ='nee '
+var audio ='nee'
+var getal = 1
+
 
 // inventory // blood and wine // inventory // // inventory // blood and wine // inventory // 
 // inventory // blood and wine // inventory // // inventory // blood and wine // inventory //
@@ -19,10 +24,14 @@ inventory.appendChild(document.getElementById("inventoryItem"))
 inventory.setAttribute('id','inventory')
 
 
+
 // Main menu // blood and wine // Main menu //
 // Main menu // blood and wine // Main menu //
 
 menu()
+
+
+
 
 
 function menu(){
@@ -47,12 +56,18 @@ button1.onclick = play;
 button2.onclick = help;
 button3.onclick = Credits;
 
+
+
+  
+
 // RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET //
 // RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET //
 // Only use for reset //
 }
 function dead(){
- menu()
+ startBackground();
+
+
  if (getzwaard == 'ja','upgrade'){ 
 
    var removeVar = document.getElementById('zwaard')
@@ -70,13 +85,16 @@ function dead(){
                                var removeVar = document.getElementById('helm')
                                removeVar.parentNode.removeChild(removeVar);
  	    	      }
- 	    
+
+     
  	             
  	getzwaard = "nee"
  	coins = 'nee'
  	getsleutel ="nee"
  	aanval ='nee'
  	armor ='nee'
+ 	audio = 'nee'
+ 	getal = 1
  }
 
 
@@ -109,9 +127,26 @@ function play(){
   document.getElementById('button2').style.display =' inline-block'
   document.getElementById('button3').style.display =' inline-block'
 
+  startBackground();
 
   
-
+}
+function startBackground(){
+if ( getal == 1){
+if( audio == 'nee'){
+  window.background_music = new Audio();
+  background_music.src = " music/theme.mp3";
+  background_music.play();
+  getal ++
+  audio = 'ja'
+}
+}
+  else if( audio =='ja'){
+  	background_music.pause();
+  	getal = 1
+  	audio = 'nee'
+  	menu();
+  }
 }
 
 // help pagina // blood and wine // help pagina //
@@ -197,6 +232,11 @@ if ( getzwaard == 'ja'){
 
     achtergrond = document.getElementById('game-container')
     achtergrond.style.backgroundImage = " url('img/dungeon.jpg') ";
+
+    var background_music = new Audio();
+    background_music.src = " music/sword.mp3";
+    background_music.play();
+
 
 
     getsleutel = 'ja'
@@ -501,6 +541,7 @@ function bossenAanval(){
 // level 4 // volcano // level 4 // // level 4 // volcano // level 4 // // level 4 // volcano // level 4 //
 
 function volcano(){
+	console.log("level 4 // het lava rijk")
 
 	   document.getElementById("description").innerHTML = 'je bent nu in het vervloekte landscap van Evemor'
 
@@ -520,6 +561,7 @@ function volcano(){
 // IMP GEVECHT // LEVEL 4 //  // IMP GEVECHT // LEVEL 4 //  // IMP GEVECHT // LEVEL 4 // // IMP GEVECHT // LEVEL 4 // 
 // IMP GEVECHT // LEVEL 4 //  // IMP GEVECHT // LEVEL 4 //  // IMP GEVECHT // LEVEL 4 // // IMP GEVECHT // LEVEL 4 // 
 function volcanoGrot(){
+	console.log("level 3 // de imp")
 
 	   document.getElementById("description").innerHTML = 'je komt een IMP tegen genaamt Yirendor de zwarte'
 
@@ -533,6 +575,7 @@ function volcanoGrot(){
        achtergrond.style.backgroundImage = " url('img/vulcanoguy.jpg') ";
 }
 function volcanoAanval(){
+	 console.log("level 3 // de imp heeft je verslagen")
 
 	  document.getElementById("description").innerHTML = 'De imp heeft je wapen vernietigd'
 
@@ -541,6 +584,13 @@ function volcanoAanval(){
 
       document.getElementById("button1").setAttribute('onclick',"volcanoVerslagen()")
        document.getElementById("button2").setAttribute('onclick',"volcano()")
+
+}
+function volcanoVerslagen(){
+
+	console.log('level 3 // de imp heeft je verslagen')
+
+	document.getElementById("description").innerHTML = 'De imp heeft je verslagen in een gevecht'
 
 }
 
