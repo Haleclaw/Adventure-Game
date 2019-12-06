@@ -399,14 +399,12 @@ function deurCastle(){
     achtergrond.style.backgroundImage = " url('img/castleguy.jpg') ";
 
     document.getElementById("button1").innerHTML = "val hem aan <br> <b>(een skilled warrior)</b>"
-    document.getElementById("button2").innerHTML = "ren weg <br> <b>(ren naar het kasteel)</b>"
     document.getElementById("button3").innerHTML = "geef jezelf over <br><b>(laat je wapens vallen)</b>"
 
     document.getElementById("button1").setAttribute('onclick',"aanvalGuy()")
-    document.getElementById("button2").setAttribute('onclick',"terugGuy()")
     document.getElementById("button3").setAttribute('onclick',"overGuy()")
 
-    document.getElementById('button2').style.display =' inline-block'
+    document.getElementById('button2').style.display =' none'
     document.getElementById('button3').style.display =' inline-block'
 
     document.getElementById("description").innerHTML = 'Je komt strijder <b> Ray van Evemor </b> tegen'
@@ -672,7 +670,6 @@ function volcanoAanval(){
       
 }
 function volcanoVerslagen(){
-
 	console.log('level 3 // de imp heeft je verslagen')
 
 	document.getElementById("description").innerHTML = 'De imp heeft je verslagen in een gevecht'
@@ -702,6 +699,13 @@ function volcanoPad(){
 
        document.getElementById("button1").setAttribute('onclick',"dead()")
        document.getElementById('button2').style.display =' none'
+
+       var background_music = new Audio();
+       background_music.src = " music/door.mp3";
+       background_music.play(); 
+
+       var removeVar = document.getElementById('sleutel')
+       removeVar.parentNode.removeChild(removeVar);
 
 	}
     else{
