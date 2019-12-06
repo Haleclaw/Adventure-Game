@@ -31,10 +31,6 @@ inventory.setAttribute('id','inventory')
 
 menu()
 
-
-
-
-
 function menu(){
 console.log("main menu")
 
