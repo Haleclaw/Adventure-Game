@@ -6,6 +6,7 @@
 
 var getzwaard = 'nee'
 var getsleutel = 'nee'
+var toegangsleutel ='nee'
 var coins = 'nee'
 var aanval ='nee'
 var helmet ='nee'
@@ -86,6 +87,9 @@ function dead(){
 
                                var removeVar = document.getElementById('helm')
                                removeVar.parentNode.removeChild(removeVar);
+
+                               var removeVar = document.getElementById('sleutel')
+                               removeVar.parentNode.removeChild(removeVar);
  	    	      }
 
      
@@ -96,6 +100,7 @@ function dead(){
  	aanval ='nee'
  	armor ='nee'
  	audio = 'nee'
+ 	toegangsleutel ='nee'
  	getal = 1
  }
 
@@ -166,8 +171,10 @@ function help(){
   document.getElementById("description").innerHTML = 'Bij blood and wine heb je invloed op het verhaal doordat je keuzes maakt <br> je maakt keuzes door op buttons te klikken'
 
   document.getElementById("button1").setAttribute('onclick',"menu()")
-  document.getElementById("button2").setAttribute('onclick',"menu()")
-  document.getElementById("button3").setAttribute('onclick',"menu()")
+  document.getElementById('button2').style.display =' none'
+  document.getElementById('button3').style.display =' none'
+
+  
 }
 
 // credits // blood and wine // credits //
@@ -180,11 +187,13 @@ function Credits(){
   document.getElementById("button2").innerHTML = "Ga terug"
   document.getElementById("button3").innerHTML = "Ga terug"
 
-  document.getElementById("description").innerHTML = 'Deze game is gemaakt door: <br> Bram van ballegooijen '
+  document.getElementById("description").innerHTML = 'Deze game is gemaakt door: <br> <b>Bram van ballegooijen </b> '
+
+
 
   document.getElementById("button1").setAttribute('onclick',"menu()")
-  document.getElementById("button2").setAttribute('onclick',"menu()")
-  document.getElementById("button3").setAttribute('onclick',"menu()")
+  document.getElementById('button2').style.display =' none'
+  document.getElementById('button3').style.display =' none'
 
 }
 
@@ -640,14 +649,31 @@ function volcanoGrot(){
 function volcanoAanval(){
 	 console.log("level 3 // de imp heeft je verslagen")
 
-	  document.getElementById("description").innerHTML = 'De imp heeft je wapen vernietigd'
+	  document.getElementById("description").innerHTML = 'De imp heeft je wapen vernietigd maar laat wel een sleutel vallen'
 
 	  document.getElementById("button1").innerHTML = "geef je zelf over <br> <b> (verloren) </b>"
       document.getElementById("button2").innerHTML = "ren weg <br> <b> (ga terug) </b"
 
-      document.getElementById("button1").setAttribute('onclick',"volcanoVerslagen()")
-       document.getElementById("button2").setAttribute('onclick',"volcano()")
+      zwaard.src = 'img/axeBroken.png'
 
+      var background_music = new Audio();
+      background_music.src = " music/sword.mp3";
+      background_music.play();
+
+      document.getElementById("button1").setAttribute('onclick',"volcanoVerslagen()")
+      document.getElementById("button2").setAttribute('onclick',"volcano()")
+
+      if (toegangsleutel == 'nee'){
+      var sleutel = document.createElement('img');
+      inventory.appendChild(sleutel);
+      sleutel.setAttribute('id','sleutel')
+      sleutel.src = "img/sleutel.png"
+      getsleutel = 'ja'
+      toegangsleutel ='ja'
+      }
+
+
+      
 }
 function volcanoVerslagen(){
 
@@ -655,6 +681,37 @@ function volcanoVerslagen(){
 
 	document.getElementById("description").innerHTML = 'De imp heeft je verslagen in een gevecht'
 
+	document.getElementById("button1").innerHTML = "ga terug <br> <b> (naar hoofdmenu) </b>"
+    
+
+    document.getElementById("button1").setAttribute('onclick',"dead()")
+    document.getElementById('button2').style.display =' none'
+      
+
+	var background_music = new Audio();
+    background_music.src = " music/dead.mp3";
+    background_music.play();
+
+}
+function volcanoPad(){
+	console.log('level 3 // de poort naar het einde')
+	if ( getsleutel == 'ja'){
+
+		document.getElementById("description").innerHTML = 'je bent nu uit het rijk van Evemor en je leeft een rustig leven <br> <b>( THE END )</b>'
+
+	   achtergrond = document.getElementById('game-container')
+       achtergrond.style.backgroundImage = " url('img/END.jpg') ";
+
+       document.getElementById("button1").innerHTML = "ga terug <br> <b> (naar hoofdmenu) </b>"
+
+       document.getElementById("button1").setAttribute('onclick',"dead()")
+       document.getElementById('button2').style.display =' none'
+
+	}
+    else{
+	document.getElementById("description").innerHTML = 'je kan niet verder omdat je geen sleutel hebt'
+    }
+	
 }
 
 
