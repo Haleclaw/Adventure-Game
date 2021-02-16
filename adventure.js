@@ -14,17 +14,13 @@ var armor ='nee '
 var audio ='nee'
 var getal = 1
 
-
 // inventory // blood and wine // inventory // // inventory // blood and wine // inventory // 
 // inventory // blood and wine // inventory // // inventory // blood and wine // inventory //
-
 
 var inventory = document.createElement('div');
 document.body.appendChild(inventory);
 inventory.appendChild(document.getElementById("inventoryItem"))
 inventory.setAttribute('id','inventory')
-
-
 
 // Main menu // blood and wine // Main menu //
 // Main menu // blood and wine // Main menu //
@@ -32,47 +28,44 @@ inventory.setAttribute('id','inventory')
 menu()
 
 function menu(){
-console.log("main menu")
+    console.log("main menu")
 
-document.getElementById("button1").innerHTML = "Play"
-document.getElementById("button2").innerHTML = "Help"
-document.getElementById("button3").innerHTML = "Credits"
+    document.getElementById("button1").innerHTML = "Play"
+    document.getElementById("button2").innerHTML = "Help"
+    document.getElementById("button3").innerHTML = "Credits"
 
-document.getElementById('button1').style.display =' inline-block'
-document.getElementById('button2').style.display =' inline-block'
-document.getElementById('button3').style.display =' inline-block'
+    document.getElementById('button1').style.display =' inline-block'
+    document.getElementById('button2').style.display =' inline-block'
+    document.getElementById('button3').style.display =' inline-block'
 
-achtergrond = document.getElementById('game-container')
-achtergrond.style.backgroundImage = " url('img/zwaard.jpg') ";
-
-
-document.getElementById("title").innerHTML = "Blood and Wine"
-document.getElementById("description").innerHTML = "Welkom bij Blood and wine. Dit is een game waar je via belangrijke keuzes invloed op het verhaal kan hebben "
-
-button1.onclick = play;
-button2.onclick = help;
-button3.onclick = Credits;
+    achtergrond = document.getElementById('game-container')
+    achtergrond.style.backgroundImage = " url('img/zwaard.jpg') ";
 
 
+    document.getElementById("title").innerHTML = "Blood and Wine"
+    document.getElementById("description").innerHTML = "Welkom bij Blood and wine. Dit is een game waar je via belangrijke keuzes invloed op het verhaal kan hebben "
 
-  
+    button1.onclick = play;
+    button2.onclick = help;
+    button3.onclick = Credits;
+}
 
 // RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET //
 // RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET // // RESET // DEAD FUNCTION // RESET //
 // Only use for reset //
-}
+
 function dead(){
- audio = 'ja'
+    audio = 'ja'
 
- startBackground();
+    startBackground();
 
 
- if (getzwaard == 'ja','upgrade'){ 
+    if (getzwaard == 'ja','upgrade'){ 
 
-   var removeVar = document.getElementById('zwaard')
-   removeVar.parentNode.removeChild(removeVar);
+        var removeVar = document.getElementById('zwaard')
+        removeVar.parentNode.removeChild(removeVar);
 
-   document.getElementById('inventoryItem').style.display = 'none'
+        document.getElementById('inventoryItem').style.display = 'none'
 
  	         if (getsleutel =='ja','nee'){
  	    	      document.getElementById('key').style.display = 'none'
@@ -109,28 +102,28 @@ function dead(){
 // introductie level // blood and wine // introductie level //
 
 function play(){
-  console.log("level 1 // main kamer")
+    console.log("level 1 // main kamer")
   
-  document.getElementById("button1").innerHTML = "je kijkt rond  <br> <b>(je ziet kisten)</br>"
-  document.getElementById("button2").innerHTML = "je gaat door de deur <br> <b>(de deur heeft een slot)</b>"
-  document.getElementById("button3").innerHTML ='je doorzoekt de dungeon <br> <b>(een koude rilling...)</b> '
-  document.getElementById("description").innerHTML = "je word wakker in de kerkers van Evemor"
+    document.getElementById("button1").innerHTML = "je kijkt rond  <br> <b>(je ziet kisten)</br>"
+    document.getElementById("button2").innerHTML = "je gaat door de deur <br> <b>(de deur heeft een slot)</b>"
+    document.getElementById("button3").innerHTML ='je doorzoekt de dungeon <br> <b>(een koude rilling...)</b> '
+    document.getElementById("description").innerHTML = "je word wakker in de kerkers van Evemor"
   
-  var achtergrond = document.getElementById('game-container')
-  achtergrond.style.backgroundImage = " url('img/dungeon.jpg') ";
+    var achtergrond = document.getElementById('game-container')
+    achtergrond.style.backgroundImage = " url('img/dungeon.jpg') ";
 
-  document.getElementById('inventoryItem').src ='img/coin.png'
-  document.getElementById('inventoryItem').style.display = "block"
+    document.getElementById('inventoryItem').src ='img/coin.png'
+    document.getElementById('inventoryItem').style.display = "block"
   
-  document.getElementById("button1").setAttribute('onclick',"kisten()")
-  document.getElementById("button2").setAttribute('onclick',"deur()")
-  document.getElementById("button3").setAttribute('onclick',"goblin()")
+    document.getElementById("button1").setAttribute('onclick',"kisten()")
+    document.getElementById("button2").setAttribute('onclick',"deur()")
+    document.getElementById("button3").setAttribute('onclick',"goblin()")
 
-  document.getElementById('button1').style.display =' inline-block'
-  document.getElementById('button2').style.display =' inline-block'
-  document.getElementById('button3').style.display =' inline-block'
+    document.getElementById('button1').style.display =' inline-block'
+    document.getElementById('button2').style.display =' inline-block'
+    document.getElementById('button3').style.display =' inline-block'
 
-  startBackground();
+    startBackground();
 
   
 }
@@ -139,19 +132,19 @@ function play(){
 // NIET AANZITTEN HET WERKT EINDELIJK //
 
 function startBackground(){
-if ( getal == 1){
-if( audio == 'nee'){
-  window.background_music = new Audio();
-  background_music.src = " music/theme.mp3";
-  background_music.play();
-  getal ++
-  }
+    if ( getal == 1){
+        if( audio == 'nee'){
+            window.background_music = new Audio();
+            background_music.src = " music/theme.mp3";
+            background_music.play();
+            getal ++
+            }
 }
-  else if( audio =='ja'){
-  	background_music.pause();
-  	getal = 1
-  	audio = 'nee'
-  	menu();
+    else if( audio =='ja'){
+  	    background_music.pause();
+  	    getal = 1
+  	    audio = 'nee'
+  	    menu();
   }
 }
 
@@ -198,78 +191,73 @@ function Credits(){
 // goblin attack // goblin attack //
 
 function goblin(){
-  console.log("level 1 // de goblin")
+    console.log("level 1 // de goblin")
 
-  if(aanval == 'nee'){
-  document.getElementById("description").innerHTML = "een goblin genaamt <b>ARCO DE GENIEPIGE</b> komt achter de boekenkasten vandaan  en steelt al je geld! HIIIHAAAA.... <br>"
+        if(aanval == 'nee'){
+            document.getElementById("description").innerHTML = "een goblin genaamt <b>ARCO DE GENIEPIGE</b> komt achter de boekenkasten vandaan  en steelt al je geld! HIIIHAAAA.... <br>"
   
-  document.getElementById("button1").innerHTML = "ren weg van de Goblin <br> <b>(je hebt niks om naartoe te rennen)</b>"
-  document.getElementById("button2").innerHTML = "Val de goblin aan <br> <b>(de goblin is zeer sterk)</b>"
-  document.getElementById('button3').style.display =' none'
-  document.getElementById('inventoryItem').style.display = 'none'
+            document.getElementById("button1").innerHTML = "ren weg van de Goblin <br> <b>(je hebt niks om naartoe te rennen)</b>"
+            document.getElementById("button2").innerHTML = "Val de goblin aan <br> <b>(de goblin is zeer sterk)</b>"
+            document.getElementById('button3').style.display =' none'
+            document.getElementById('inventoryItem').style.display = 'none'
 
-  
+            document.getElementById("button1").setAttribute('onclick',"goblinterug()")
+            document.getElementById("button2").setAttribute('onclick',"goblinAanval()")
 
-  document.getElementById("button1").setAttribute('onclick',"goblinterug()")
-  document.getElementById("button2").setAttribute('onclick',"goblinAanval()")
+            var achtergrond = document.getElementById('game-container')
+            achtergrond.style.backgroundImage = " url('img/dungeonGoblin.jpg') ";
 
-  var achtergrond = document.getElementById('game-container')
-  achtergrond.style.backgroundImage = " url('img/dungeonGoblin.jpg') ";
-
-    var background_music = new Audio();
-    background_music.src = " music/orc.mp3";
-    background_music.play();
+            var background_music = new Audio();
+            background_music.src = " music/orc.mp3";
+            background_music.play();
 }
-            else{
+        else{
             document.getElementById("description").innerHTML = " er is verder niks meer in de kamer"
             }
 
 }
 
 function goblinAanval(){
-	console.log("level 1 // verslagen")
+    console.log("level 1 // verslagen")
 
-if ( getzwaard == 'ja'){
-    document.getElementById("description").innerHTML = "je hebt de goblin verslaan! <br> <b>(je hebt je geld terug en een sleutel gekregen)</b>"
-    document.getElementById('inventoryItem').style.display = 'block'
+        if ( getzwaard == 'ja'){
+            document.getElementById("description").innerHTML = "je hebt de goblin verslaan! <br> <b>(je hebt je geld terug en een sleutel gekregen)</b>"
+            document.getElementById('inventoryItem').style.display = 'block'
 
+            document.getElementById("button1").innerHTML = "loop terug <br> <b>(naar de hoofdkamer)</b> "
+            document.getElementById('button2').style.display =' none'
 
-    document.getElementById("button1").innerHTML = "loop terug <br> <b>(naar de hoofdkamer)</b> "
-    document.getElementById('button2').style.display =' none'
+            document.getElementById("button1").setAttribute('onclick',"play()")
 
-    document.getElementById("button1").setAttribute('onclick',"play()")
+            var key = document.createElement('img');
+            inventory.appendChild(key);
+            key.setAttribute('id','key')
+            key.src = "img/sleutel.png"
 
-    var key = document.createElement('img');
-    inventory.appendChild(key);
-    key.setAttribute('id','key')
-    key.src = "img/sleutel.png"
+            achtergrond = document.getElementById('game-container')
+            achtergrond.style.backgroundImage = " url('img/dungeon.jpg') ";
 
-    achtergrond = document.getElementById('game-container')
-    achtergrond.style.backgroundImage = " url('img/dungeon.jpg') ";
+            var background_music = new Audio();
+            background_music.src = " music/sword.mp3";
+            background_music.play();
 
-    var background_music = new Audio();
-    background_music.src = " music/sword.mp3";
-    background_music.play();
-
-
-
-    getsleutel = 'ja'
-    coins = "ja"
-    aanval ='ja'
+            getsleutel = 'ja'
+            coins = "ja"
+            aanval ='ja'
 
 
 }
-           else{
-             document.getElementById("description").innerHTML = "De goblin heeft je op een pijnlijke manier vermoord <br> <b>probeer het opnieuw!</b>"
+        else{
+            document.getElementById("description").innerHTML = "De goblin heeft je op een pijnlijke manier vermoord <br> <b>probeer het opnieuw!</b>"
 
-             document.getElementById("button1").innerHTML = "ga terug <br> <b>( naar het hoofdmenu)<b> "
-             document.getElementById('button2').style.display =' none'
+            document.getElementById("button1").innerHTML = "ga terug <br> <b>( naar het hoofdmenu)<b> "
+            document.getElementById('button2').style.display =' none'
 
-             var background_music = new Audio();
-             background_music.src = " music/dead.mp3";
-             background_music.play();
+            var background_music = new Audio();
+            background_music.src = " music/dead.mp3";
+            background_music.play();
 
-             document.getElementById("button1").setAttribute('onclick',"dead()")
+            document.getElementById("button1").setAttribute('onclick',"dead()")
      }
 }
 function goblinterug(){
@@ -284,7 +272,6 @@ function goblinterug(){
     background_music.src = " music/dead.mp3";
     background_music.play();
 
-
     document.getElementById("button1").setAttribute('onclick',"dead()")
  
 }
@@ -295,34 +282,35 @@ function goblinterug(){
 function kisten(){
 	console.log("level 1 // kisten doorzoeken")
 
-if ( getzwaard == 'nee'){
-	document.getElementById("description").innerHTML = "je hebt een oud zwaard gevonden in een van de kisten"
-    var zwaard = document.createElement('img');
-    inventory.appendChild(zwaard);
-    zwaard.setAttribute('id','zwaard')
-    zwaard.src = "img/zwaard.png"
-    getzwaard = 'ja'
-    }
-           else{
-      	     document.getElementById("description").innerHTML = "er zit verder niks meer in de kisten"
+        if ( getzwaard == 'nee'){
+	        document.getElementById("description").innerHTML = "je hebt een oud zwaard gevonden in een van de kisten"
+            var zwaard = document.createElement('img');
+            inventory.appendChild(zwaard);
+            zwaard.setAttribute('id','zwaard')
+            zwaard.src = "img/zwaard.png"
+            getzwaard = 'ja'
+            }
+
+        else{
+      	    document.getElementById("description").innerHTML = "er zit verder niks meer in de kisten"
       }
 }
 function deur(){
-	console.log("level 1 // de deur")
+    console.log("level 1 // de deur")
 
- if ( getsleutel == 'ja'){
+        if ( getsleutel == 'ja'){
 
- 	key.src = "img/sleutelkapot.png"
+ 	        key.src = "img/sleutelkapot.png"
 
- 	var background_music = new Audio();
-    background_music.src = " music/door.mp3";
-    background_music.play();
+ 	        var background_music = new Audio();
+            background_music.src = " music/door.mp3";
+            background_music.play();
 
- 	 castle()
+ 	        castle()
 
  }
- 	        else{
-	          document.getElementById("description").innerHTML = "je hebt een sleutel nodig voor deze deur"
+ 	    else{
+	        document.getElementById("description").innerHTML = "je hebt een sleutel nodig voor deze deur"
 }
 }
 
@@ -376,15 +364,15 @@ function onderzoekCastle(){
     document.getElementById('button3').style.display =' none'
 }
 function castleUpgrade(){
-	if (coins == 'ja'){
-		zwaard.src = "img/axe.png"
+    if (coins == 'ja'){
+	    zwaard.src = "img/axe.png"
 		getzwaard = 'upgrade'
 		coins = 'nee'
 
 		document.getElementById('inventoryItem').style.display = 'none'
 	}
-	   else{
-	   	 document.getElementById("description").innerHTML = 'Je hebt niet genoeg'
+	else{
+	    document.getElementById("description").innerHTML = 'Je hebt niet genoeg'
 	   }
 }
 
@@ -411,45 +399,42 @@ function deurCastle(){
 
 }
 function aanvalGuy(){
-	console.log("level 2 // gewonnen")
+    console.log("level 2 // gewonnen")
 
-     if( getzwaard == 'upgrade'){
-     	document.getElementById("description").innerHTML = 'Je hebt de machtige Ray verslagen in het gevecht!'
+        if( getzwaard == 'upgrade'){
+     	    document.getElementById("description").innerHTML = 'Je hebt de machtige Ray verslagen in het gevecht!'
 
-     	achtergrond = document.getElementById('game-container')
-        achtergrond.style.backgroundImage = " url('img/castle.jpg') ";
+     	    achtergrond = document.getElementById('game-container')
+            achtergrond.style.backgroundImage = " url('img/castle.jpg') ";
 
-        zwaard.src = "img/axebloody.png"
+            zwaard.src = "img/axebloody.png"
 
 
-        document.getElementById("button1").innerHTML = "ga naar buiten <br> <b>(De bossen van Evemor)</b>"
+            document.getElementById("button1").innerHTML = "ga naar buiten <br> <b>(De bossen van Evemor)</b>"
 
-        document.getElementById("button1").setAttribute('onclick',"buiten()")
+            document.getElementById("button1").setAttribute('onclick',"buiten()")
         
-        document.getElementById('button2').style.display =' none'
-        document.getElementById('button3').style.display =' none'
+            document.getElementById('button2').style.display =' none'
+            document.getElementById('button3').style.display =' none'
 
-        var background_music = new Audio();
-        background_music.src = " music/sword.mp3";
-        background_music.play();
-
-
-	    
+            var background_music = new Audio();
+            background_music.src = " music/sword.mp3";
+            background_music.play();
 } 
-               else{
-               	  document.getElementById("description").innerHTML = 'Je zwaard is gebroken door de machtige <b>Ray</b>'
+        else{
+            document.getElementById("description").innerHTML = 'Je zwaard is gebroken door de machtige <b>Ray</b>'
 
-	              zwaard.src = "img/zwaardkapot.png"
+	        zwaard.src = "img/zwaardkapot.png"
 
-	              var background_music = new Audio();
-                  background_music.src = " music/swordbroken.mp3";
-                  background_music.play();
+	        var background_music = new Audio();
+            background_music.src = " music/swordbroken.mp3";
+            background_music.play();
                }
            }
 function terugGuy(){
-
 	castle()
 }
+
 function overGuy(){
 	console.log("level 2 // vermoord")
 
@@ -519,26 +504,25 @@ function bossenWizzard(){
 }
 function Wizzard(){
 	console.log("level 3 // de sleutel")
-	if ( getsleutel == 'ja'){
+	    if ( getsleutel == 'ja'){
 
-    var gethelmet = document.createElement('img');
-    inventory.appendChild(gethelmet);
-    gethelmet.setAttribute('id','helm')
-    gethelmet.src = "img/Helmet.png"
+            var gethelmet = document.createElement('img');
+            inventory.appendChild(gethelmet);
+            gethelmet.setAttribute('id','helm')
+            gethelmet.src = "img/Helmet.png"
 
-	var getarmor = document.createElement('img');
-    inventory.appendChild(getarmor);
-    getarmor.setAttribute('id','armor')
-    getarmor.src = "img/Armor.png"
+	        var getarmor = document.createElement('img');
+            inventory.appendChild(getarmor);
+            getarmor.setAttribute('id','armor')
+            getarmor.src = "img/Armor.png"
 
-    getsleutel = 'nee'
-    armor ='ja'
+            getsleutel = 'nee'
+            armor ='ja'
 
-     document.getElementById('key').style.display =' none'
-                 
+            document.getElementById('key').style.display =' none'         
      }
-                 else{
-                 	document.getElementById("description").innerHTML = 'je hebt geen sleutel'
+        else{
+            document.getElementById("description").innerHTML = 'je hebt geen sleutel'
                  }
 
     
@@ -581,22 +565,22 @@ function bossenRennen(){
     background_music.play();
 }
 function bossenAanval(){
-	console.log("level 3 // gewonnen")
-	if( armor == 'ja'){
+    console.log("level 3 // gewonnen")
+	    	if( armor == 'ja'){
 
-	   document.getElementById("description").innerHTML = 'je heb <b> BESSIE DE GROTE </b> verslagen en vervolg je reis'
+	            document.getElementById("description").innerHTML = 'je heb <b> BESSIE DE GROTE </b> verslagen en vervolg je reis'
 
-	   document.getElementById("button1").innerHTML = "je gaat verder op je reis <br> <b> (je volgt het pad) </b>"
-	   document.getElementById('button2').style.display =' none'
+	            document.getElementById("button1").innerHTML = "je gaat verder op je reis <br> <b> (je volgt het pad) </b>"
+	            document.getElementById('button2').style.display =' none'
 
-	   var background_music = new Audio();
-       background_music.src = " music/sword.mp3";
-       background_music.play();
+	            var background_music = new Audio();
+                background_music.src = " music/sword.mp3";
+                background_music.play();
 
-	   document.getElementById("button1").setAttribute('onclick',"volcano()")
+	            document.getElementById("button1").setAttribute('onclick',"volcano()")
 	}
-               else{
-               	  bossenRennen()
+            else{
+                bossenRennen()
                }
 }
 // level 4 // volcano // level 4 // // level 4 // volcano // level 4 // // level 4 // volcano // level 4 //
@@ -657,13 +641,13 @@ function volcanoAanval(){
       document.getElementById("button1").setAttribute('onclick',"volcanoVerslagen()")
       document.getElementById("button2").setAttribute('onclick',"volcano()")
 
-      if (toegangsleutel == 'nee'){
-      var sleutel = document.createElement('img');
-      inventory.appendChild(sleutel);
-      sleutel.setAttribute('id','sleutel')
-      sleutel.src = "img/sleutel.png"
-      getsleutel = 'ja'
-      toegangsleutel ='ja'
+        if (toegangsleutel == 'nee'){
+            var sleutel = document.createElement('img');
+            inventory.appendChild(sleutel);
+            sleutel.setAttribute('id','sleutel')
+            sleutel.src = "img/sleutel.png"
+            getsleutel = 'ja'
+            toegangsleutel ='ja'
       }
 
 
@@ -688,28 +672,28 @@ function volcanoVerslagen(){
 }
 function volcanoPad(){
 	console.log('level 3 // de poort naar het einde')
-	if ( getsleutel == 'ja'){
+	    if ( getsleutel == 'ja'){
 
-		document.getElementById("description").innerHTML = 'je bent nu uit het rijk van Evemor en je leeft een rustig leven <br> <b>( THE END )</b>'
+		    document.getElementById("description").innerHTML = 'je bent nu uit het rijk van Evemor en je leeft een rustig leven <br> <b>( THE END )</b>'
 
-	   achtergrond = document.getElementById('game-container')
-       achtergrond.style.backgroundImage = " url('img/END.jpg') ";
+	        achtergrond = document.getElementById('game-container')
+            achtergrond.style.backgroundImage = " url('img/END.jpg') ";
 
-       document.getElementById("button1").innerHTML = "ga terug <br> <b> (naar hoofdmenu) </b>"
+            document.getElementById("button1").innerHTML = "ga terug <br> <b> (naar hoofdmenu) </b>"
 
-       document.getElementById("button1").setAttribute('onclick',"dead()")
-       document.getElementById('button2').style.display =' none'
+            document.getElementById("button1").setAttribute('onclick',"dead()")
+            document.getElementById('button2').style.display =' none'
 
-       var background_music = new Audio();
-       background_music.src = " music/door.mp3";
-       background_music.play(); 
+            var background_music = new Audio();
+            background_music.src = " music/door.mp3";
+            background_music.play(); 
 
-       var removeVar = document.getElementById('sleutel')
-       removeVar.parentNode.removeChild(removeVar);
+            var removeVar = document.getElementById('sleutel')
+            removeVar.parentNode.removeChild(removeVar);
 
 	}
-    else{
-	document.getElementById("description").innerHTML = 'je kan niet verder omdat je geen sleutel hebt'
+        else{
+	        document.getElementById("description").innerHTML = 'je kan niet verder omdat je geen sleutel hebt'
     }
 	
 }
